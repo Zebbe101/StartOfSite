@@ -1,0 +1,7 @@
+Jag har tänkte att göra en sida för ett apotek där man kan boka tid eller se en stor lista av produkter samt prata med en operatör.
+Listan med produkter ska vara fylld med stora bilder vilket zoomar in när du hoverar över dem. 
+Samt ska det vara ett pris under dem och home sidan ska vara en sida där du kan boka tid see nyheter om rea eller trycka på en chat bubbla för att prata med en operatör.
+
+Det ska vara en vit hemsida och operatör prat delen ska vara grön och ska stå i högra hörnet.
+Apoteket ska vara designad efter kronanas apotek och innehåll en orange och vit tema.
+Det ska finnas ett sätt att lägga till produkter i sin korg och sedan gå till en sida där det står alla produkter och vad den totala summan är samt vad varje produkt kostar och skapa en function som tillåter dig att ta bort eller lägga till mer av den produkt
