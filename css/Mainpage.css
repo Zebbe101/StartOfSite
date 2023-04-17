@@ -10,16 +10,87 @@
     left: 0;
     right: 0;
     z-index: 1;
+    height: 4rem;
+    width: auto;
 }
-
+a {
+    color: #333;
+    text-decoration: none;
+}
+.Navigationbar h1 {
+    color: orange;
+    font-size: xx-large;
+}
+a:hover {
+    text-decoration: underline;
+}
+#Kronan {
+    position: absolute;
+    width: 4rem;
+    top: 1rem;
+}
 .nav-links {
     display: flex;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .nav-links li {
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 ul {
     list-style: none;
+    padding: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .Navigationbar {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+    }
+    
+    .nav-links {
+        flex-direction: row;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 1;
+    }
+
+    .Navigationbar h1 {
+        color: orange;
+        font-size: x-large;
+    }
+
+    #Kronan {
+        top: 1.5rem;
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 440) {
+    .Navigationbar {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    #Kronan {
+        top: 1.5rem;
+    }
+}
+
