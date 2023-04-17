@@ -89,8 +89,14 @@ ul {
         margin: 0.5rem 0;
     }
 
+    .Navigationbar h1 {
+        color: orange;
+        font-size: large;
+    }
+
     #Kronan {
         top: 1.5rem;
+        width: 25px;
     }
 }
 
