@@ -51,7 +51,6 @@ ul {
     }
     
     .nav-links {
-        flex-direction: row;
         text-align: center;
         margin-top: 1rem;
     }
@@ -71,7 +70,7 @@ ul {
     }
 }
 
-@media screen and (max-width: 440) {
+@media screen and (max-width: 440px) {
     .Navigationbar {
         flex-direction: column;
         align-items: center;
@@ -80,23 +79,30 @@ ul {
     }
     
     .nav-links {
-        flex-direction: column;
         text-align: center;
         margin-top: 1rem;
     }
     
     .nav-links li {
-        margin: 0.5rem 0;
+        margin: 0.5rem 1;
+        font-size: 15px;
     }
 
     .Navigationbar h1 {
         color: orange;
-        font-size: large;
+        font-size: medium;
     }
 
     #Kronan {
         top: 1.5rem;
         width: 25px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .nav-links li {
+        margin: 0.5rem 1;
+        font-size: 10px;
     }
 }
 
