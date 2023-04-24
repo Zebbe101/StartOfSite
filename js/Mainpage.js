@@ -3,14 +3,23 @@ const products = [
     {
         imageSrc: "./images/voltaren.png",
         title: "Voltaren",
-        description: "250g",
-        price: "?Kr"
+        description: "100 g",
+        price: "166Kr",
+        buy: "Köp"
     },
     {
-        imageSrc: "product-image2.jpg",
-        title: "Product Title 2",
-        description: "Product Description 2",
-        price: "Product Price 2"
+        imageSrc: "./images/anthelios.webp",
+        title: "La Roche-Posay Anthelios Uvmune Ultra Light Creme SPF 50+",
+        description: "Solskydd för ansiktet 50 ml",
+        price: "225kr",
+        buy: "Köp"
+    },
+    {
+        imageSrc: "./images/omni-vegan.png",
+        title: "OmniVegan Omega-3",
+        description: "Kosttillskott Kapsel, 60 st",
+        price: "235kr",
+        buy: "Köp"
     },
     // Add more products here
 ];
@@ -40,14 +49,30 @@ for (const product of products) {
     const price = document.createElement("p");
     price.className = "product-price";
     price.textContent = product.price;
+
+    const buybutton = document.createElement("button");
+    buybutton.className = "product-buybutton";
+    buybutton.textContent = product.buy;
     
     textContainer.appendChild(title);
     textContainer.appendChild(description);
     textContainer.appendChild(price);
+    textContainer.appendChild(buybutton);
     
     productFrame.appendChild(image);
     productFrame.appendChild(textContainer);
     
     productContainer.appendChild(productFrame);
 }
-  
+
+// Get all product frame elements
+const productFrames = document.getElementsByClassName('product-frame');
+
+// Loop through each product frame and add click event listener
+for (let i = 0; i < productFrames.length; i++) {
+  productFrames[i].addEventListener('click', function() {
+    // Code to execute when product frame is clicked
+    // You can modify this to perform any desired action, such as navigating to a product detail page or adding the product to cart, etc.
+    alert('Product ' + (i + 1) + ' clicked!');
+  });
+}
