@@ -1,3 +1,31 @@
+let shoppingCartBtn = document.getElementById("ShoppingCartBtn")
+let sidebar = document.getElementById('sidebar');
+let closeBtn = document.getElementById('close-btn');
+let ProductsInShoppingCart = document.getElementById("ProductsInShoppingCart")
+let SidebarItems = document.getElementsByClassName("SideBar-Items")
+// Define the callback function that will be triggered when an item is added to the shopping cart
+const shoppingCartItems = new Set();
+function shoppingCartChanged() {
+    console.log('Shopping cart updated:', shoppingCart);
+    ProductsInShoppingCart.innerHTML = "";
+    for (i in shoppingCart) {
+        const item = document.createElement("li");
+        item.textContent = shoppingCart[i]["name"] + " - " + shoppingCart[i]["price"];
+        item.className = "SideBar-Items";
+        ProductsInShoppingCart.appendChild(item);
+    }
+    // Add any other code you want to run when the shopping cart is updated
+}
+  
+  // Wrap the shoppingCart array in a Proxy object
+const shoppingCart = new Proxy([], {
+    set(target, property, value) {
+      target[property] = value;
+      // Call the shoppingCartChanged function whenever a new item is added to the array
+      shoppingCartChanged();
+      return target[property];
+    }
+});
 // Array of products with their information
 const products = [
     {
@@ -9,16 +37,16 @@ const products = [
     },
     {
         imageSrc: "./images/anthelios.webp",
-        title: "La Roche-Posay Anthelios Uvmune Ultra Light Creme SPF 50+",
+        title: "La Roche-Posay SPF 50+",
         description: "Solskydd för ansiktet 50 ml",
-        price: "225kr",
+        price: "225Kr",
         buy: "Köp"
     },
     {
         imageSrc: "./images/omni-vegan.png",
         title: "OmniVegan Omega-3",
         description: "Kosttillskott Kapsel, 60 st",
-        price: "235kr",
+        price: "235Kr",
         buy: "Köp"
     },
     // Add more products here
@@ -53,7 +81,19 @@ for (const product of products) {
     const buybutton = document.createElement("button");
     buybutton.className = "product-buybutton";
     buybutton.textContent = product.buy;
-    
+    buybutton.addEventListener('click',function() {
+      let item = {
+        name: title.textContent,
+        price: price.textContent
+      };
+      // Check if the item already exists in the shopping cart
+      if (shoppingCart.some((cartItem) => cartItem.name === item.name && cartItem.price === item.price)) {
+        console.log("Item already exists in shopping cart");
+      } else {
+        shoppingCart.push(item);
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+      }
+      });
     textContainer.appendChild(title);
     textContainer.appendChild(description);
     textContainer.appendChild(price);
@@ -63,16 +103,8 @@ for (const product of products) {
     productFrame.appendChild(textContainer);
     
     productContainer.appendChild(productFrame);
-}
+};
 
-// Get all product frame elements
-const productFrames = document.getElementsByClassName('product-frame');
-
-// Loop through each product frame and add click event listener
-for (let i = 0; i < productFrames.length; i++) {
-  productFrames[i].addEventListener('click', function() {
-    // Code to execute when product frame is clicked
-    // You can modify this to perform any desired action, such as navigating to a product detail page or adding the product to cart, etc.
-    alert('Product ' + (i + 1) + ' clicked!');
-  });
-}
+shoppingCartBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('show-sidebar');
+});
