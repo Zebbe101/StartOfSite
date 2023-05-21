@@ -1,189 +1,357 @@
 body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Hide horizontal scrollbar if content overflows horizontally */
 }
+
+/* Styles for navigation bar */
 .Navigationbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    height: 4rem;
-    width: auto;
+    display: flex; /* Display navigation bar items in a row */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: center; /* Center items vertically */
+    padding: 1rem 2rem; /* Increased horizontal padding */
+    background-color: white; /* Set background color to white */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    position: fixed; /* Position navigation bar as fixed */
+    top: 0; /* Position navigation bar at the top */
+    left: 0; /* Position navigation bar at the left */
+    right: 0; /* Position navigation bar at the right */
+    z-index: 1; /* Set a higher z-index to ensure the navigation bar is on top of other elements */
+    height: 4rem; /* Set fixed height for the navigation bar */
+    width: auto; /* Allow the width to be determined automatically based on the content */
 }
+
+/* Styles for shopping cart button */
+button#ShoppingCartBtn {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+}
+
+/* Styles for search bar container */
 .SearchBar {
-    position: absolute;
-    border-radius: 10px;
-    border-color: orange;
-    width: 20vw;
-    height: 4vh;
-    left: 50%;
-    transform: translate(-50%);
+    position: relative; /* Position search bar container relatively within its parent element */
+    display: flex; /* Display search bar items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Align items to the right */
+    width: 100%; /* Set width to 100% of its parent element */
+    max-width: 300px; /* Limit the maximum width of the search bar container */
 }
 
+/* Styles for search bar input */
+.SearchBar input[type="text"] {
+    flex-grow: 1; /* Allow input to grow and fill the available space */
+    border: 2px solid #ddd; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    background-color: #fff; /* Set background color to white */
+    height: 40px; /* Set fixed height for the input */
+    padding: 0.5rem; /* Add padding */
+    font-size: 1rem; /* Set font size */
+    outline: none; /* Remove outline when focused */
+}
+/* Styles for shopping cart icon */
 .ShoppingCart {
-    cursor: pointer;
-    width: 20px;
-}
-.page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    cursor: pointer; /* Set cursor to indicate it is clickable */
+    width: 20px; /* Set width of the shopping cart icon */
 }
 
+/* Styles for product container */
 .product-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows products to wrap to new row */
-    justify-content: center;
-    max-width: 1200px; /* Maximum width for products */
+    display: flex; /* Display product items in a row */
+    flex-wrap: wrap; /* Allow wrapping of product items to new lines */
+    justify-content: center; /* Center product items horizontally */
+    max-width: 1200px; /* Limit the maximum width of the product container */
+    max-height: calc(100vh - 6rem); /* Calculate the maximum height for the product container */
 }
 
+/* Styles for page container */
+.page-container {
+    display: flex; /* Display page container items in a row */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: 60vh; /* Set fixed height for the page container */
+    width: 80%; /* Adjust the width value as needed */
+    border: 4px solid #357208; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    background-color: #f9f9f9; /* Set background color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    margin: 10rem auto 0; /* Move the container down by adjusting margin-top */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+/* Styles for scrollbar */
+.page-container::-webkit-scrollbar {
+    width: 5vw; /* Width of the scrollbar */
+    min-height: 20px; /* Minimum height of the scrollbar */
+}
+
+.page-container::-webkit-scrollbar-track {
+    background-color: #f9f9f9; /* Background color of the scrollbar track */
+}
+
+.page-container::-webkit-scrollbar-thumb {
+    background-image: url('../images/KronanSlider.png'); /* URL of the scrollbar image */
+    background-size: contain; /* Scale the image to cover the thumb */
+    background-repeat: no-repeat; /* Prevent repeating of the background image */
+    background-position: center; /* Position the background image at the center */
+}
+
+/* Styles for product frame */
 .product-frame {
-    width: 200px; /* Adjust to desired size */
-    margin: 10px; /* Margin between products */
-    padding: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex; /* Display product frame items in a column */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: space-between; /* Distribute space evenly between items */
+    align-items: start; /* Align items to the start (left) */
+    width: 100%; /* Set width to 100% of its parent element */
+    max-width: 200px; /* Limit the maximum width of the product frame */
+    margin: 10px; /* Add margin around the product frame */
+    padding: 10px; /* Add padding inside the product frame */
+    background-color: #f9f9f9; /* Set background color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
 }
 
+/* Styles for product image */
 .product-image {
-    max-width: 100%;
+    max-width: 100%; /* Set maximum width to 100% of its container */
 }
 
+/* Styles for product text */
 .product-text {
-    padding: 10px;
+    padding: 10px; /* Add padding */
 }
 
+/* Styles for product title */
 .product-title {
-    font-size: 15px;
-    margin: 0 0 10px;
+    font-size: 15px; /* Set font size */
+    margin: 0 0 10px; /* Add margin at the bottom */
 }
 
+/* Styles for product description */
 .product-description {
-    font-size: 14px;
-    margin: 0 0 10px;
+    font-size: 14px; /* Set font size */
+    margin: 0 0 10px; /* Add margin at the bottom */
 }
 
+/* Styles for product price */
 .product-price {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Set font weight to bold */
+    margin: 0; /* Remove margin */
 }
+
+/* Styles for product buy button */
 .product-buybutton {
-    width: 50%;
-    padding: 5px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: large;
-    border-width: 0;
-    color: white;
-    background-color: #357208;
-    border-bottom-right-radius: 25%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    width: 5vw; /* Set width relative to the viewport width */
+    padding: 5px; /* Add padding */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Set font family */
+    font-size: large; /* Set font size */
+    border-width: 0; /* Remove border width */
+    color: white; /* Set text color to white */
+    background-color: #357208; /* Set background color */
+    border-bottom-right-radius: 25%; /* Add border radius to the bottom-right corner */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    cursor: pointer; /* Set cursor to indicate it is clickable */
 }
-/* Media queries for responsiveness */
+
+/* Styles for anchor tags */
+a {
+    color: #333; /* Set text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Styles for navigation bar heading */
+.Navigationbar h2 {
+    color: orange; /* Set text color to orange */
+    font-size: xx-large; /* Set font size */
+}
+
+/* Styles for anchor tags on hover */
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Styles for Kronan image */
+#Kronan {
+    position: absolute; /* Position the image absolutely */
+    width: 4rem; /* Set width */
+    top: 1rem; /* Position from the top */
+}
+
+/* Styles for navigation bar links */
+.nav-links {
+    display: flex; /* Display links in a row */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Set font family */
+}
+
+/* Styles for navigation bar link items */
+.nav-links li {
+    margin-left: 1rem; /* Add margin to the left of each link item */
+}
+
+/* Styles for unordered list */
+ul {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+/* Styles for image container */
+.image-container {
+    display: flex; /* Display image items in a row */
+    flex-wrap: wrap; /* Allow wrapping of image items to new lines */
+    justify-content: center; /* Center image items horizontally */
+    margin-top: 2rem; /* Add margin at the top */
+}
+
+/* Styles for image item */
+.image-item {
+    margin: 0.5rem; /* Add margin around each image item */
+}
+
+/* Styles for image item image */
+.image-item img {
+    max-width: 40vw; /* Set maximum width to 100% of its container */
+    height: 50vh; /* Automatically adjust height to maintain aspect ratio */
+}
+/* Media query for screens larger than 769px */
+@media screen and (min-width: 769px) {
+    .page-container {
+        padding-top: 4rem; /* Increase top padding for larger screens */
+    }
+
+    .product-container {
+        margin-top: 4rem; /* Increase top margin for larger screens */
+    }
+}
+
+/* Media query for screens up to 768px */
 @media screen and (max-width: 768px) {
     .product-frame {
-        width: 25%; /* Adjust to desired size */
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove maximum width restriction */
+    }
+
+    .product-image {
+        height: 100%; /* Adjust height to maintain aspect ratio */
+        width: 70%; /* Adjust width for smaller screens */
+    }
+    
+    .product-text {
+        padding: 5px; /* Adjust padding */
+        overflow-wrap: break-word; /* Break long words */
+        text-align: center; /* Center align the text */
+        max-height: unset; /* Remove maximum height */
+        overflow-y: unset; /* Remove vertical overflow */
+    }
+    
+    .product-description {
+        margin-bottom: 10px; /* Add margin at the bottom */
+    }
+    
+    .product-buybutton {
+        width: 100%; /* Adjust width to fill the container */
+        box-sizing: border-box; /* Include padding and border in the total width */
     }
 }
 
-  
-a {
-    color: #333;
-    text-decoration: none;
-}
-.Navigationbar h1 {
-    color: orange;
-    font-size: xx-large;
-}
-a:hover {
-    text-decoration: underline;
-}
-#Kronan {
-    position: absolute;
-    width: 4rem;
-    top: 1rem;
-}
-.nav-links {
-    display: flex;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.nav-links li {
-    margin-left: 1rem;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* Media query for screens up to 768px */
 @media screen and (max-width: 768px) {
+    .product-frame {
+        width: 40vw; /* Adjust width for smaller screens */
+        max-width: none; /* Remove maximum width restriction */
+        height: 65vh; /* Adjust height for smaller screens */
+    }
+
+    .product-buybutton {
+        width: 20vw; /* Adjust width for smaller screens */
+    }
+
+    .product-image {
+        height: 100%; /* Adjust height to maintain aspect ratio */
+        width: 80%; /* Adjust width for smaller screens */
+    }
+
     .Navigationbar {
-        flex-direction: column;
-        align-items: center;
-        height: 90px;
-
+        flex-direction: column; /* Change navigation bar to column layout */
+        align-items: center; /* Center align items horizontally */
+        height: auto; /* Allow height to adjust based on content */
     }
-    
+
+    .page-container {
+        padding-top: 5rem; /* Increase top padding for smaller screens */
+    }
+
+    .SearchBar {
+        width: 80%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove maximum width restriction */
+    }
+
     .nav-links {
-        text-align: center;
-        margin-top: .5rem;
-    }
-    
-    .nav-links li {
-        margin: 0.5rem 1;
+        text-align: center; /* Center align the links */
+        margin-top: 0.5rem; /* Add margin at the top */
     }
 
-    .Navigationbar h1 {
-        color: orange;
-        font-size: x-large;
+    .nav-links li {
+        margin: 0.5rem; /* Add margin around each link item */
+    }
+
+    .Navigationbar h2 {
+        color: orange; /* Set text color to orange */
+        font-size: large; /* Adjust font size for smaller screens */
     }
 
     #Kronan {
-        top: 1.5rem;
-        width: 45px;
+        top: 1.3rem; /* Adjust position from the top */
+        width: 40px; /* Adjust width */
     }
 }
 
+/* Media query for screens up to 440px */
 @media screen and (max-width: 440px) {
-    .Navigationbar {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
+    .product-frame {
+        width: 80%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove maximum width restriction */
+        height: 60vh; /* Adjust height for smaller screens */
+        max-height: 60vh; /* Set maximum height */
+    }
 
+    .product-image {
+        height: 50%; /* Adjust height to maintain aspect ratio */
+        width: 100%; /* Set width to fill the container */
     }
-    
-    .nav-links {
-        text-align: center;
-        margin-top: 1rem;
+
+    .product-title {
+        font-size: small;
     }
-    
+
+    .product-description {
+        font-size: x-small;
+    }
+
+    .product-buybutton {
+        width: 50vw;
+    }
+
+    .SearchBar {
+        width: 100%; /* Adjust width to fill the container */
+        max-width: none; /* Remove maximum width restriction */
+    }
+
     .nav-links li {
-        margin: 0.5rem 1;
-        font-size: 15px;
+        font-size: 15px; /* Adjust font size for smaller screens */
     }
 
-    .Navigationbar h1 {
-        color: orange;
-        font-size: medium;
+    .Navigationbar h2 {
+        font-size: medium; /* Adjust font size for smaller screens */
     }
 
     #Kronan {
-        top: 1.5rem;
-        width: 25px;
+        top: 1.5rem; /* Adjust position from the top */
+        width: 25px; /* Adjust width */
     }
 }
 
+/* Media query for screens up to 250px */
 @media screen and (max-width: 250px) {
     .nav-links li {
-        margin: 0.5rem 1;
-        font-size: 10px;
+        margin: 0.5rem 1rem; /* Add margin around each link item */
+        font-size: 10px; /* Adjust font size for smaller screens */
     }
 }

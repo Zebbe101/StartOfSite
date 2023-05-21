@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/Mainpage.css">
     <link rel="stylesheet" href="./css/SideBar.css">
+    <link rel="icon" href="./images/Kronan.png">
     <title>Kronans apotek</title>
+    <meta name="description" content="Online handel och recept hantering">
 </head>
 <body>
     <nav class="Navigationbar">
-        <h1>
+        <h2>
             APOTEK
             <img src="./images/Kronan.png" alt="NoImg" id="Kronan">
-        </h1>
+        </h2>
         <ul class="nav-links">
+            <li><button id="ShoppingCartBtn" ><img class="ShoppingCart" src="./images/shopping-cart.png" alt="noImg"></button></li>
             <li><input class="SearchBar" type="text" placeholder="Sök..."></li>
-            <li><btn id="ShoppingCartBtn" ><img class="ShoppingCart" src="./images/shopping-cart.png" alt="noImg"></btn></li>
-            <li><a href="#">Rea</a></li>
-            <li><a href="#">Hitta apotek</a></li>
         </ul>
     </nav>
     <div class="page-container">
@@ -26,12 +26,23 @@
           <!-- Product frames will be dynamically generated here -->
         </ol>
       </div>
-      <div class="SideBar" id="sidebar">
-        <h1 id="ProductText">Korg</h1>
-            <ul id="ProductsInShoppingCart">
-            </ul>
-            <button class="buy-button" onclick="location.href='http://127.0.0.1:5500/project2%20webprog/ShoppingCart.html'">Köp</button>
+      <figure class="image-container">
+        <div class="image-item">
+          <img src="./images/rea1.png" alt="Image 1">
         </div>
+        <div class="image-item">
+          <img src="./images/huvudverk.png" alt="Image 2">
+        </div>
+        <div class="image-item">
+          <img src="path_to_image3.jpg" alt="Image 3">
+        </div>
+      </figure>
+    <div class="SideBar" id="sidebar">
+        <h1 id="ProductText">Korg</h1>
+        <ul id="ProductsInShoppingCart">
+        </ul>
+        <button class="buy-button" onclick="location.href='http://127.0.0.1:5500/project2%20webprog/ShoppingCart.html'">Köp</button>
+    </div>
       <script src="./js/Mainpage.js"></script>
 </body>
 </html>

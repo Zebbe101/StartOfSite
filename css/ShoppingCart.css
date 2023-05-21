@@ -1,179 +1,150 @@
 /* Global Styles */
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Applies border-box box-sizing to all elements */
 }
 
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
+  font-family: Arial, sans-serif; /* Sets the font family for the body */
+  font-size: 16px; /* Sets the font size for the body */
+  line-height: 1.5; /* Sets the line height for the body */
+  margin: 0; /* Removes margin from the body */
 }
 
 h1, h2, h3 {
-  margin-top: 0;
+  margin-top: 0; /* Removes top margin from heading elements */
 }
 
 a {
-  color: #007bff;
+  color: #007bff; /* Sets the default color for links */
 }
 
 a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color: #0056b3; /* Sets the color for links when hovered */
+  text-decoration: underline; /* Underlines links when hovered */
 }
 
 .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 960px; /* Sets the maximum width for the container */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 20px; /* Adds padding to the container */
 }
 
 /* Header Styles */
 
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+  background-color: #333; /* Sets the background color for the header */
+  color: #fff; /* Sets the text color for the header */
+  padding: 20px; /* Adds padding to the header */
 }
+
+
 
 /* Main Content Styles */
 
 .content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  display: flex; /* Displays the content as a flex container */
+  justify-content: space-between; /* Aligns the flex items with space between them */
+  margin-top: 20px; /* Adds top margin to the content */
 }
 
 .form {
-  width: 60%;
+  width: 60%; /* Sets the width of the form */
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Adds bottom margin to form groups */
 }
 
 label {
-  display: block;
-  margin-bottom: 5px;
+  display: block; /* Displays labels as block elements */
+  margin-bottom: 5px; /* Adds bottom margin to labels */
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 100%; /* Sets the width of the input elements */
+  padding: 10px; /* Adds padding to the input elements */
+  border: 1px solid #ccc; /* Sets the border for the input elements */
+  border-radius: 4px; /* Rounds the corners of the input elements */
 }
 
 #summary {
-  width: 30%;
+  width: 30%; /* Sets the width of the summary section */
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+  list-style: none; /* Removes the default list style for unordered lists */
+  padding: 0; /* Removes padding from unordered lists */
 }
 
 .total {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
+  font-size: 18px; /* Sets the font size for the total section */
+  font-weight: bold; /* Sets the font weight for the total section */
+  margin-top: 20px; /* Adds top margin to the total section */
 }
 
 /* Form Styles */
 
 fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
+  border: none; /* Removes the border for fieldsets */
+  padding: 0; /* Removes padding from fieldsets */
+  margin: 0; /* Removes margin from fieldsets */
 }
 
 legend {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 24px; /* Sets the font size for the legend */
+  font-weight: bold; /* Sets the font weight for the legend */
+  margin-bottom: 20px; /* Adds bottom margin to the legend */
 }
 
 input[type="text"],
 input[type="email"] {
-  font-size: 16px;
+  font-size: 16px; /* Sets the font size for text and email input types */
 }
 
 input:focus {
-  outline: none;
-  box-shadow: 0px 0px 5px #007bff;
+  outline: none; /* Removes the outline when input elements are focused */
+  box-shadow: 0px 0px 5px #007bff; /* Adds a box shadow when input elements are focused */
 }
 
 /* Responsive Styles */
 
 @media screen and (max-width: 767px) {
-
   .content {
-    flex-direction: column;
+    flex-direction: column; /* Changes the flex direction to column on small screens */
   }
 
   .form, #summary {
-    width: 100%;
+    width: 100%; /* Sets the width of the form and summary section to 100% on small screens */
   }
-
+  .h1 {
+    background-color: white; /* Sets the background color for the header */
+    color: black; /* Sets the text color for the header */
+    padding: 20px; /* Adds padding to the header */
+  }
 }
 
 /* Button Styles */
 
 button {
-  background-color: #007bff;
-  border: none;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
+  background-color: #007bff; /* Sets the background color for buttons */
+  border: none; /* Removes the border for buttons */
+  color: #fff; /* Sets the text color for buttons */
+  padding: 10px 20px; /* Adds padding to buttons */
+  font-size: 16px; /* Sets the font size for buttons */
+  border-radius: 4px; /* Rounds the corners of buttons */
+  cursor: pointer; /* Sets the cursor to a pointer for buttons */
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Sets the background color for buttons when hovered */
 }
 
 button:active {
-  background-color: #004ba8;
+  background-color: #004ba8; /* Sets the background color for buttons when active */
 }
 
 button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Error Styles */
-
-.error {
-  color: #dc3545;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* Success Styles */
-
-.success {
-  color: #28a745;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* Loader Styles */
-
-.loader {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #ccc;
-  border-top-color: #007bff;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: #ccc; /* Sets the background color for disabled buttons */
+  cursor: not-allowed; /* Sets the cursor to not-allowed for disabled buttons */
 }

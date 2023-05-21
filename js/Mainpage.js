@@ -49,6 +49,34 @@ const products = [
         price: "235Kr",
         buy: "Köp"
     },
+    {
+      imageSrc: "./images/Alvedon.jpg",
+      title: "Alvedon",
+      description: "500mg paracetamol",
+      price: "40kr",
+      buy: "Köp"
+  },
+  {
+    imageSrc: "./images/Allegra-D.png",
+    title: "Allegra-D",
+    description: "120 mg",
+    price: "128kr",
+    buy: "Köp"
+  },
+  {
+    imageSrc: "./images/Ipren.png",
+    title: "Ipren",
+    description: "400 mg",
+    price: "49kr",
+    buy: "Köp"
+},
+{
+  imageSrc: "./images/braun.png",
+  title: "Febertermometer",
+  description: "1st",
+  price: "348kr (695)",
+  buy: "Köp"
+},
     // Add more products here
 ];
   

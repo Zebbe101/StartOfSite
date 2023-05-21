@@ -1,87 +1,98 @@
-/* .SideBar: Sets the position, width, height, and box-shadow properties for an element with the class "SideBar".    */
-.SideBar {
-    position: absolute;
-    top: 20vh;
-    right: -500px;
-    width: 20vw;
-    height: 70vh;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    background-color: white;
-    transform: translateY(100%);
-    transition: transform 1s ease;
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scrollbar from appearing on the page */
 }
+
+.SideBar {
+    position: fixed; /* Sets the position of the sidebar as fixed */
+    top: 20vh; /* Sets the distance from the top of the viewport */
+    right: -500px; /* Initially sets the sidebar to be off-screen on the right */
+    width: 20vw; /* Sets the width of the sidebar */
+    height: 70vh; /* Sets the height of the sidebar */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adds a box shadow to the sidebar */
+    background-color: white; /* Sets the background color of the sidebar */
+    transform: translateY(100%); /* Initially moves the sidebar off-screen */
+    transition: transform 1s ease; /* Adds a transition effect when the sidebar is shown */
+    z-index: 999; /* Sets the stacking order of the sidebar */
+}
+
 .SideBar.show-sidebar {
-    transform: translateX(0%);
-    right: 0px;
+    transform: translateX(0%); /* Moves the sidebar into view by translating it horizontally */
+    right: 0px; /* Adjusts the position of the sidebar to be fully visible */
 }
 
 #ProductsInShoppingCart {
-    list-style: none;
+    list-style: none; /* Removes the default bullet points from the list */
 }
 
 /* @media only screen and (max-width: 768px): Applies styles to the ".SideBar" element only when the screen width is at most 768px. */
 @media only screen and (max-width: 768px) {
     .SideBar {
-      width: 60vw;
-      height: 60vh;
-      top: 20vh;
-      right: 20vw;
-      left: 20vw;
-      bottom: 20vh;
-      z-index: 999;
+        width: 60vw; /* Sets the width of the sidebar for smaller screens */
+        height: 60vh; /* Sets the height of the sidebar for smaller screens */
+        right: -500px; /* Initially sets the sidebar to be off-screen on the right */
+        top: 30vh; /* Sets the distance from the bottom of the viewport */
+        z-index: 999; /* Sets the stacking order of the sidebar */
+    }
+
+    .SideBar.show-sidebar {
+        transform: translateX(0%); /* Moves the sidebar into view by translating it horizontally */
+        right: 20vw; /* Adjusts the position of the sidebar to be fully visible */
+        left: 20vw; /* Adjusts the position of the sidebar to be fully visible */
     }
 }
+
 /* @media only screen and (max-width: 500px): Applies styles to the ".SideBar" element only when the screen width is at most 500px. */
 @media only screen and (max-width: 500px) {
     .SideBar {
-      width: 90vw;
-      height: 80vh;
-      top: 10vh;
-      right: 5vw;
-      left: 5vw;
-      bottom: 10vh;
-      z-index: 999;
+        width: 60vw; /* Sets the width of the sidebar for smaller screens */
+        height: 60vh; /* Sets the height of the sidebar for smaller screens */
+        right: -500px; /* Initially sets the sidebar to be off-screen on the right */
+        bottom: 20vh; /* Increase the value to move the sidebar down */
+        z-index: 999; /* Sets the stacking order of the sidebar */
+    }
+
+    .SideBar.show-sidebar {
+        transform: translateX(0%); /* Moves the sidebar into view by translating it horizontally */
+        right: 20vw; /* Adjusts the position of the sidebar to be fully visible */
+        left: 20vw; /* Adjusts the position of the sidebar to be fully visible */
     }
 }
-/* #ProductText: Sets the left, right, text-align, font-family, and font-size properties for an element with the ID "ProductText". */
+
 #ProductText {
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-    font-size: large;
+    left: 0; /* Sets the distance from the left edge of the parent container */
+    right: 0; /* Sets the distance from the right edge of the parent container */
+    text-align: center; /* Centers the text horizontally */
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; /* Sets the font family */
+    font-size: large; /* Sets the font size */
 }
-/* .ProductsInShoppingCart: Sets the list-style-position and text-align properties for an element with the class "ProductsInShoppingCart". */
 
-/* .buy-button: Sets various properties, such as background-color, border, color, position, and size, for an element with the class "buy-button". */
 .buy-button {
-    position: absolute;
-    background-color: #008cba;
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px auto;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 3vh;
+    position: absolute; /* Sets the position of the button as absolute */
+    background-color: #008cba; /* Sets the background color of the button */
+    border: none; /* Removes the border from the button */
+    color: white; /* Sets the text color of the button */
+    padding: 12px 24px; /* Sets the padding of the button */
+    text-align: center; /* Centers the text horizontally within the button */
+    text-decoration: none; /* Removes text decoration from the button */
+    display: inline-block; /* Sets the button to be an inline block element */
+    font-size: 16px; /* Sets the font size of the button */
+    margin: 4px auto; /* Sets the margin of the button */
+    cursor: pointer; /* Sets the cursor style for the button */
+    border-radius: 5px; /* Rounds the corners of the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Adds a box shadow to the button */
+    transition: all 0.3s ease; /* Adds a transition effect to the button */
+    left: 50%; /* Positions the button 50% from the left edge of the parent container */
+    transform: translateX(-50%); /* Moves the button horizontally by 50% of its own width */
+    bottom: 3vh; /* Sets the distance from the bottom of the parent container */
 }
 
-/* .buy-button:hover: Sets the background-color, box-shadow, and transform properties for the ".buy-button" element when the mouse hovers over it. */
 .buy-button:hover {
-    background-color: #005f79;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    transform: translate(-50%, -2px);
+    background-color: #005f79; /* Sets the background color of the button when hovered */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Adds a box shadow to the button when hovered */
+    transform: translate(-50%, -2px); /* Slightly moves the button up when hovered */
 }
 
 .SideBar-Items {
-    display: flex;
-    justify-content: space-around;
+    display: flex; /* Displays the items in the sidebar as a flex container */
+    justify-content: space-around; /* Distributes the items evenly within the flex container */
 }
