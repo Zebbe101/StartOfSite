@@ -330,7 +330,7 @@ ul {
     }
 
     .SearchBar {
-        width: 100%; /* Adjust width to fill the container */
+        width: 20vw; /* Adjust width to fill the container */
         max-width: none; /* Remove maximum width restriction */
     }
 
