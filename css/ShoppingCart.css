@@ -38,8 +38,6 @@ header {
   padding: 20px; /* Adds padding to the header */
 }
 
-
-
 /* Main Content Styles */
 
 .content {
@@ -117,10 +115,31 @@ input:focus {
   .form, #summary {
     width: 100%; /* Sets the width of the form and summary section to 100% on small screens */
   }
-  .h1 {
-    background-color: white; /* Sets the background color for the header */
-    color: black; /* Sets the text color for the header */
-    padding: 20px; /* Adds padding to the header */
+}
+
+@media screen and (max-width: 157px) {
+  .content {
+    flex-direction: column; /* Changes the flex direction to column on small screens */
+  }
+
+  .form, #summary {
+    width: 100%; /* Sets the width of the form and summary section to 100% on small screens */
+  }
+  header {
+    width: 200vw;
+  }
+}
+
+@media screen and (max-width: 78px) {
+  .content {
+    flex-direction: column; /* Changes the flex direction to column on small screens */
+  }
+
+  .form, #summary {
+    width: 100%; /* Sets the width of the form and summary section to 100% on small screens */
+  }
+  header {
+    width: 350vw;
   }
 }
 
