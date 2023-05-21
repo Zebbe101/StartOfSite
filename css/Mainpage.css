@@ -257,6 +257,7 @@ ul {
         width: 40vw; /* Adjust width for smaller screens */
         max-width: none; /* Remove maximum width restriction */
         height: 65vh; /* Adjust height for smaller screens */
+        align-items: center;
     }
 
     .product-buybutton {
@@ -264,8 +265,9 @@ ul {
     }
 
     .product-image {
-        height: 100%; /* Adjust height to maintain aspect ratio */
-        width: 80%; /* Adjust width for smaller screens */
+        height: 50%; /* Adjust height to maintain aspect ratio */
+        width: 50%; /* Adjust width for smaller screens */
+        align-self: center;
     }
 
     .Navigationbar {
@@ -314,7 +316,8 @@ ul {
 
     .product-image {
         height: 50%; /* Adjust height to maintain aspect ratio */
-        width: 100%; /* Set width to fill the container */
+        width: 65%; /* Set width to fill the container */
+        align-self: center;
     }
 
     .product-title {
