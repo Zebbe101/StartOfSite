@@ -60,7 +60,7 @@ button#ShoppingCartBtn {
     justify-content: center; /* Center product items horizontally */
     max-width: 1200px; /* Limit the maximum width of the product container */
     max-height: calc(100vh - 6rem); /* Calculate the maximum height for the product container */
-    margin-top: 6rem; /* Add top margin to create space for the navigation bar */
+    padding-top: 20vh;
 }
 
 /* Styles for page container */
